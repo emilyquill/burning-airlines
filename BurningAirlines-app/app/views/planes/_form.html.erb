@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@plane) do |f| %>
   <% if @plane.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :columns %><br>
-    <%= f.number_field :columns %>
-  </div>
-  <div class="field">
-    <%= f.label :rows %><br>
-    <%= f.number_field :rows %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name,:class => 'form-control' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :columns %>
+    <%= f.number_field :columns, :class => 'form-control' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :rows %>
+    <%= f.number_field :rows, :class => 'form-control' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.submit  %>
+  </fieldset>
 <% end %>
+</div>
