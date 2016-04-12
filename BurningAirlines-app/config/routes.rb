@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  get '/search' => 'flights#search'
   resources :reservations
-  root "planes#home"
+  root "flights#index"
   resources :users
   resources :flights
   resources :planes
