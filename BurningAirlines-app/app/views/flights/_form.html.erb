@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@flight) do |f| %>
   <% if @flight.errors.any? %>
     <div id="error_explanation">
@@ -25,9 +26,10 @@
   </div>
   <div class="field">
     <%= f.label :plane_id %><br>
-    <%= f.text_field :plane_id %>
+    <%= f.collection_select(:plane_id, Plane.all, :id, :name, {:prompt => 'Select a plane'} ) %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

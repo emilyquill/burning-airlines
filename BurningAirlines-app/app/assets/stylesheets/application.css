@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1429305254053-2a1bfe816f36?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=567d8e738843139cf98daa2f6f15b387);
+  background-position: center;
+  background-size: cover;
+
+}
+
+html {
+  height: 100%;
+}
+
+.form-group {
+  max-width: 400px;
+}
