@@ -1,6 +1,9 @@
 class PlanesController < ApplicationController
   before_action :set_plane, only: [:show, :edit, :update, :destroy]
 
+  def home
+  end
+  
   # GET /planes
   # GET /planes.json
   def index
