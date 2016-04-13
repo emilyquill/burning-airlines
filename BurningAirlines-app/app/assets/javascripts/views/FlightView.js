@@ -14,10 +14,18 @@ app.FlightView = Backbone.View.extend({
     var flightViewHTML = _.template( flightViewTemplate );
     this.$el.html( flightViewHTML(this.model.toJSON() ) );
 
-    // var flightAttr = this.model.attributes;
-    // console.log(attributes);
-    // this.$el.html ( '<p>' + flightNumber + '</p><p>' + destination + '</p>' );
-    // console.log(flightNumber);
+    app.planes = new app.Planes();
+    app.planes.fetch().done(function() {
+      var matchingPlane = app.planes.where({
+        id: plane
+      });
+      var planeColumns = matchingPlane[0].attributes.columns;
+      var planeRows = matchingPlane[0].attributes.rows;
+      $('#main').append('<div id="plane"></div>');
+      renderPlane(planeRows,planeColumns);
+
+    });
+
 
   }
 });

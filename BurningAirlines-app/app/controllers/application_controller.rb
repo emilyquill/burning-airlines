@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :fetch_user
-  # before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
   before_action :authorise, :except => [:new, :create, :home]
 
   def log_in user
