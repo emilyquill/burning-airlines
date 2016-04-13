@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container"> -->
 <%= form_for(@plane) do |f| %>
   <% if @plane.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +28,7 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.submit  %>
+    <%= f.submit :class => 'btn btn-success'  %>
   </fieldset>
 <% end %>
-</div>
+<!-- </div> -->
