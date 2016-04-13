@@ -26,8 +26,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<%= new_user_path %>"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
-        <li><a href="<%= login_path %>"><i class="fa fa-user" aria-hidden="true"></i></i> Login</a></li>
-        <li><a href="<%= root_path %>"><i class="fa fa-user" aria-hidden="true"></i></i>Logout</a></li>
+
+        <% if !@current_user.present? %>
+          <li><a href="<%= login_path %>"><i class="fa fa-user" aria-hidden="true"></i></i> Login</a></li>
+        <% else %>
+          <li><a href="<%= logout_path %>"><i class="fa fa-user" aria-hidden="true"></i></i>Logout</a></li>
+        <% end %>
       <ul>
 
     </div><!-- /.navbar-collapse -->
