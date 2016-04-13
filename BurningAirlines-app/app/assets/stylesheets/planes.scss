@@ -1,3 +1,43 @@
 // Place all the styles related to the Planes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.col {
+  background-color: darkslategrey;
+  display: inline-block;
+  margin: 5px;
+  width: 30px;
+  height: 35px;
+  border-radius: 4px 4px 8px 8px;
+}
+
+.row-label {
+  background-color: blue;
+  display: inline-block;
+  margin: 5px;
+  width: 30px;
+  height: 35px;
+}
+
+.row {
+  height: 40px;
+}
+
+
+#plane {
+  background-color: rgba(255,255,255,0.7);
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.col-header {
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  margin: 5px;
+}

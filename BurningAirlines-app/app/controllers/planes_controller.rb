@@ -3,7 +3,7 @@ class PlanesController < ApplicationController
 
   def home
   end
-  
+
   # GET /planes
   # GET /planes.json
   def index
