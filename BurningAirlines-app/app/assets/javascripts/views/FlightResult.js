@@ -9,7 +9,6 @@ app.FlightResult = Backbone.View.extend({
   // it creates and stores this as $el anyway
   showFlight: function(e) {
     var flightId = e.currentTarget.dataset.id;
-    console.log(e);
     app.router.navigate('flight/' + flightId, true);
 
   }

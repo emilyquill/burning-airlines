@@ -33,7 +33,6 @@ app.FlightSearchView = Backbone.View.extend({
           });
           var capacity = matchingPlane[0].attributes.columns * matchingPlane[0].attributes.rows;
           $row.append('<td> Unknown / ' + capacity + '</td>');
-
           $row.append('<td><button class="reserveFlightBtn" data-id="' + flightNumber + '">Reserve</button><td>');
         }
       });
