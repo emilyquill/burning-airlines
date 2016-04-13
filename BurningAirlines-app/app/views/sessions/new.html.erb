@@ -9,5 +9,10 @@
     <%= f.submit "Log in"%>
   <% end %>
 </div>
+
 <br />
 <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+
+<% flash.each do |key, value| %>
+  <div class="alert"><%= value %></div>
+<% end %>
