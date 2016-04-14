@@ -5,8 +5,18 @@ app.Reservations = Backbone.Collection.extend({
   model: app.Reservation,
   initialize: function() {
     this.on("add", function( reservation ){
-      console.log( reservation );
-      // TODO: repaint the flight view when a reservation is added
+      if ( reservation.get("flight_id") === app.flight_id ) {
+
+        var col = reservation.attributes.column;
+        var row = reservation.attributes.row;
+
+        var $seat = $('[data-col="'+col+'"][data-row="'+row+'"]');
+        $seat.addClass('taken');
+
+      }
+      // IF we are currently showing that flight which a reservation has been added to
+
+      // app.bookView.render();
     });
   }
 });
