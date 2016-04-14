@@ -28,10 +28,35 @@ body {
 
 }
 
+
+
 html {
   height: 100%;
 }
 
 .form-group {
+  max-width: 250px;
+}
+
+/*.btn-success {
+  background-color: #95a5a6;
+  border-color: #95a5a6;
+}*/
+
+/*.btn-primary {
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}*/
+
+.table {
   max-width: 400px;
+}
+
+.table-inverse {
+  color: #eceeef;
+  background-color: #373a3c;
+}
+
+.table-inverse a {
+  color: #eceeef;
 }

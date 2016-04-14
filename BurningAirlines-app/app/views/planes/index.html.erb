@@ -3,7 +3,9 @@
 
 <h1>Listing Planes</h1>
 
-<table class="table table-condensed table-bordered">
+
+<table class="table table-inverse">
+
   <thead>
     <tr>
       <th>Name</th>
@@ -29,5 +31,8 @@
 
 <br>
 
-<%= link_to 'New Plane', new_plane_path %>
+<%= button_to 'New Plane', new_plane_path, :class => 'btn btn-success' %>
+
+
+
 </div>
