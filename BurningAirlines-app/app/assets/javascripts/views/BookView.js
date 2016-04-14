@@ -45,15 +45,7 @@ app.BookView = Backbone.View.extend({
       });
       reservation.save();
       $('.col').removeClass('clicked');
-
     }
-
-
-
-
-    // TODO: If we wanted to send to a 'confirmation' page..
-    // app.router.navigate('flight/' + flightID+'/book/booking-complete', true);
-
   },
   render: function(){
     var flightNumber = this.model.get('id');

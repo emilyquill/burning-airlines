@@ -16,12 +16,13 @@
   <table id="results" class="hidden table table-inverse">
     <thead>
       <tr>
-        <th>Flight Number</th>
+        <th>Flight #</th>
         <th>Origin</th>
         <th>Destination</th>
         <th>Date</th>
         <th>Plane</th>
-        <th>Book </th>
+        <th>Capacity</th>
+        <th> </th>
       </tr>
     </thead>
     <tbody id="flight-results">
@@ -41,8 +42,10 @@
     <td> <%%= origin %></td>
     <td> <%%= destination %></td>
     <td> <%%= date %></td>
-    <td> <%%= plane_id %></td>
-    <td> <button class="btn btn-success" id="book-flight" data-id="<%%= id  %>"> Book Flight</button></td>
+    <td> <%%= plane.name %></td>
+    <td> <%%= plane.columns * plane.rows %></td>
+
+    <td> <button class="btn btn-success" id="book-flight" data-id="<%%= id  %>"> Book </button></td>
   </tr>
 </script>
 
@@ -62,15 +65,17 @@
 <!-- Flight Search Template -->
 <script id="flightViewTemplate" type="text/template">
   <div id="viewFlightContainer">
-    <h2>Flight Details</h2>
-  <table id="viewFlight" class="table table-condensed table-bordered">
+    <h2>Flight Details:</h2>
+  <table id="viewFlight" class="table table-bordered">
     <thead>
       <tr>
-        <th>Flight Number</th>
+        <th>Flight #</th>
         <th>Origin</th>
         <th>Destination</th>
         <th>Date</th>
         <th>Plane</th>
+        <th>Capacity</th>
+
       </tr>
 
     </thead>
@@ -80,10 +85,12 @@
       <td> <%%= origin %></td>
       <td> <%%= destination %></td>
       <td> <%%= date %>    </td>
-      <td> <%%= plane_id %></td>
+      <td> <%%= plane.name %></td>
+      <td> <%%= plane.columns * plane.rows %></td>
+
     </tr>
     </tbody>
   </table>
-  <h2>Choose your seat</h2>
+  <h2>Choose your seat:</h2>
   </div>
 </script>
