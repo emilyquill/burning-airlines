@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 200px;
+    margin-left: 300px;
+}
+
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 120px;
+    text-align: center;
+}
 
 .col {
   background-color: darkslategrey;
@@ -63,7 +76,6 @@ table {
   background-color: rgba(255,255,255,0.8);
 }
 
-
 .nav>li {
   color: white;
 }
@@ -74,4 +86,13 @@ table {
 
 .taken {
   background-color: red;
+}
+
+#confirm-seat-container {
+  padding: 10px;
+  text-align: center;
+}
+#viewFlightContainer {
+  text-align: center;
+  padding: 20px;
 }

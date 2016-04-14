@@ -1,5 +1,5 @@
 <!-- This is only for Backbone -->
-<div class="container">
+<!-- <div class="container"> -->
 <div id="main"></div>  <!-- Foundation for our AppView.js -->
 
 <!-- Passing user's name to Backbone -->
@@ -49,11 +49,12 @@
 <script id="flightSearchViewTemplate" type="text/template">
   <label for="input">From:</label><input id="origin" placeholder="San Francisco">
   <label for="input">To:</label><input id="destination" placeholder="New York">
-  <button>Search</button>
+  <button class="btn btn-primary">Search</button>
 </script>
 
 <!-- Flight Search Template -->
 <script id="flightViewTemplate" type="text/template">
+  <div id="viewFlightContainer">
   <table id="viewFlight" class="table table-condensed table-bordered">
     <thead>
       <tr>
@@ -78,5 +79,6 @@
     </tr>
     </tbody>
   </table>
+  </div>
 </script>
-</div>
+<!-- </div> -->

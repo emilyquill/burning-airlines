@@ -70,7 +70,7 @@ app.BookView = Backbone.View.extend({
       var planeRows = matchingPlane[0].attributes.rows;
       $('#main').append('<div id="plane"></div>');
       renderPlane(planeRows,planeColumns);
-      $('#main').append('<button id="confirm-seat"> Confirm Seat </button>');
+      $('#main').append('<div id="confirm-seat-container"><button id="confirm-seat" class="btn btn-success"> Confirm Seat </button></div>');
 
       window.setInterval(function(){
         app.reservations.fetch();
