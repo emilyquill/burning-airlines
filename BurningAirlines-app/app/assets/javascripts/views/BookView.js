@@ -36,7 +36,7 @@ app.BookView = Backbone.View.extend({
     if (seatRow === undefined) {
       alert("Please choose an available seat and then click confirm.");
     } else {
-      alert("CONFIRMED! You're sitting in seat " +seatRow+columnLetter+" on flight "+flightID);
+      alert("CONFIRMED! You're sitting in seat " +seatRow+columnLetter+" on flight BA"+flightID);
       reservation.set({
         user_id: userID,
         flight_id: flightID,
