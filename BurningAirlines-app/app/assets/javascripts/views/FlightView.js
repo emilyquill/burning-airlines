@@ -20,7 +20,7 @@ app.FlightView = Backbone.View.extend({
     var flightViewTemplate = $('#flightViewTemplate').html();
     var flightViewHTML = _.template( flightViewTemplate );
     this.$el.html( flightViewHTML(this.model.toJSON() ) );
-    this.$el.append('<button id="book-flight"> Book Flight </button>');
+    this.$el.append('<button id="book-flight" class="btn btn-primary"> Book Flight </button>');
 
     app.planes = new app.Planes();
     app.planes.fetch().done(function() {
