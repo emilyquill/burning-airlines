@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container"> -->
 <%= form_for(@flight) do |f| %>
   <% if @flight.errors.any? %>
     <div id="error_explanation">
@@ -12,17 +12,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :origin %><br>
-    <%= f.text_field :origin %>
+    <%= f.text_field :origin, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :destination %><br>
-    <%= f.text_field :destination %>
+    <%= f.text_field :destination, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date, :class => 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :plane_id %><br>
@@ -32,4 +32,5 @@
     <%= f.submit %>
   </div>
 <% end %>
-</div>
+
+<!-- </div> -->
