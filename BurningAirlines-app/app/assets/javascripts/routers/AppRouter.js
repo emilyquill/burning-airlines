@@ -9,8 +9,8 @@ app.AppRouter = Backbone.Router.extend({
   },
   index: function() {
     console.log('Main page has loaded');
-    var appView = new app.AppView();
-    appView.render();
+    app.appView = new app.AppView();
+    app.appView.render();
   },
   viewFlight: function(id) {
     var flight = new app.Flight({id:id});
@@ -22,7 +22,9 @@ app.AppRouter = Backbone.Router.extend({
     });
   },
   bookFlight: function(id) {
+
     console.log('book flight function reached!');
+    app.flight_id = parseInt( id );
     var flight = new app.Flight({id:id});
     flight.fetch().done(function(){
 
@@ -34,6 +36,9 @@ app.AppRouter = Backbone.Router.extend({
     });
   },
   findFlight: function(origin, destination){
+    app.appView = app.appView || new app.AppView();
+    app.appView.render();
+    $(".hidden").removeClass("hidden");
       app.flights = new app.Flights();
       app.flights.fetch().done(function() {
         var matchingFlights = app.flights.where({

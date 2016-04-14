@@ -15,7 +15,14 @@ app.BookView = Backbone.View.extend({
     $('.col').removeClass('clicked');
     var seatRow = e.currentTarget.dataset.row;
     var seatLetter = e.currentTarget.dataset.col;
-    $(e.currentTarget).addClass('clicked');
+    // IF THE SEAT HAS A CLASS OF TAKEN, DO NOT ADD CLASS CLICKED
+    var classes = e.currentTarget.classList;
+    if ($.inArray('taken',classes) === 1) {
+      alert('That seat is already taken');
+    } else {
+      $(e.currentTarget).addClass('clicked');
+    }
+
   },
   createReservation: function(e){
     var reservation = new app.Reservation();
@@ -39,7 +46,6 @@ app.BookView = Backbone.View.extend({
 
   },
   render: function(){
-    console.log('BookView updated / called');
     var flightNumber = this.model.get('id');
     var origin = this.model.get('origin');
     var destination = this.model.get('destination');
@@ -60,6 +66,11 @@ app.BookView = Backbone.View.extend({
       $('#main').append('<div id="plane"></div>');
       renderPlane(planeRows,planeColumns);
       $('#main').append('<button id="confirm-seat"> Confirm Seat </button>');
+
+      window.setInterval(function(){
+        app.reservations.fetch();
+      }, 2000);
+
     });
 
   }
