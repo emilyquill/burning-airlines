@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160412073013) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "flights", force: :cascade do |t|
     t.string   "origin"
     t.string   "destination"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160412073013) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "flights", ["plane_id"], name: "index_flights_on_plane_id"
+  add_index "flights", ["plane_id"], name: "index_flights_on_plane_id", using: :btree
 
   create_table "planes", force: :cascade do |t|
     t.string   "name"
@@ -41,8 +44,8 @@ ActiveRecord::Schema.define(version: 20160412073013) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "reservations", ["flight_id"], name: "index_reservations_on_flight_id"
-  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
+  add_index "reservations", ["flight_id"], name: "index_reservations_on_flight_id", using: :btree
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.text     "name"
@@ -52,4 +55,7 @@ ActiveRecord::Schema.define(version: 20160412073013) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "flights", "planes"
+  add_foreign_key "reservations", "flights"
+  add_foreign_key "reservations", "users"
 end
