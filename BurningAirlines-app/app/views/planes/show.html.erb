@@ -1,25 +1,34 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @plane.name %>
-</p>
 
-<p>
-  <strong>Columns:</strong>
-  <%= @plane.columns %>
-</p>
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Columns</th>
+      <th>Rows</th>
 
-<p>
-  <strong>Rows:</strong>
-  <%= @plane.rows %>
-</p>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_plane_path(@plane) %> |
-<%= link_to 'Back', planes_path %>
+  <tbody>
+
+     <td><%= @plane.name %></td>
+     <td><%= @plane.columns %></td>
+     <td><%= @plane.rows %></td>
+
+  </tbody>
+</table>
+
+<%= button_to 'Edit', edit_plane_path(@plane), :class => 'btn btn-success' %>
+<br>
+<%= button_to 'Back', planes_path, :class => 'btn btn-primary' %>
+
+
 </div>
 
+<br>
 
 <!-- Plane diagram below -->
 <input type="hidden" class="plane-details" value="<%= @plane.id %>" data-columns="<%= @plane.columns %>" data-rows=" <%= @plane.rows %>">
