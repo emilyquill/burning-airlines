@@ -30,6 +30,9 @@
           <li><a href="<%= login_path %>"><i class="fa fa-user" aria-hidden="true"></i></i> Login</a></li>
           <li><a href="<%= new_user_path %>"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
         <% else %>
+          <li><a href="<%= search_path %>"><i class="fa fa-search" aria-hidden="true"></i> Search Flight</a></li>
+          <li><a href="<%= new_flight_path %>"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Flight </a></li>
+          <li><a href="<%= new_plane_path %>"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Plane </a></li>
           <li><a>You are logged in as <%= @current_user.name %></a></li>
           <li><a href="<%= logout_path %>"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
 
