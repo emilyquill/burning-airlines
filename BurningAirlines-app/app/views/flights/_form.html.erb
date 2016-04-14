@@ -24,13 +24,33 @@
     <%= f.label :date %><br>
     <%= f.datetime_select :date, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :plane_id %><br>
-    <%= f.collection_select(:plane_id, Plane.all, :id, :name, {:prompt => 'Select a plane'} ) %>
+    <%= f.collection_select(:plane_id, Plane.all, :id, :name, {:prompt => 'Select a plane'} )  %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit :class => 'btn btn-success', :method => 'get'  %>
   </div>
 <% end %>
+
+
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+
 
 <!-- </div> -->
