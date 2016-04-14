@@ -1,8 +1,9 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Reservations</h1>
+<h1>All Reservations</h1>
 
-<table class="table table-condensed table-bordered">
+<table class="table table-inverse">
   <thead>
     <tr>
       <th>User</th>
@@ -17,14 +18,19 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.user.name %></td>
-        <td><%= reservation.flight.id %></td>
+        <td>BA <%= reservation.flight.id %></td>
         <td><%= reservation.column %></td>
         <td><%= reservation.row %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+    <% if @reservations.length == 0 %>
+    <td> No reservations </td>
+     <% end %>
   </tbody>
 </table>
 
 <br>
+</div>

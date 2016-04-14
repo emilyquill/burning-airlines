@@ -6,6 +6,7 @@
 <table class="table table-inverse">
   <thead>
     <tr>
+      <th>Flight Number</th>
       <th>Date</th>
       <th>Origin</th>
       <th>Destination</th>
@@ -17,7 +18,8 @@
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
-        <td><%= flight.date.strftime '%a %B %y, %k:%M'  %></td>
+        <td>BA <%= flight.id  %></td>
+        <td><%= flight.date.strftime "%B %-d, %-l.%M%P"  %></td>
         <td><%= flight.origin %></td>
         <td><%= flight.destination %></td>
         <td><%= flight.plane.id %></td>
@@ -26,6 +28,10 @@
         <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+    <% if @flights.length == 0 %>
+    <td colspan="5"> No Flights </td>
+     <% end %>
   </tbody>
 </table>
 

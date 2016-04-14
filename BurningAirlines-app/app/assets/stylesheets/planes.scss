@@ -2,11 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table{
-    border: 1px solid black;
-    table-layout: fixed;
-    width: 200px;
-    margin-left: 300px;
+div#viewFlightContainer, #viewFlight{
+  margin: 0 auto;
+  width: 80vw;
 }
 
 th, td {
@@ -51,28 +49,46 @@ th, td {
 .row {
   height: 40px;
   margin-bottom: 20px;
+  display:flex;
 }
 
+.map-header {
+  display:flex;
+}
 
 #plane {
   background-color: rgba(255,255,255,0.7);
-  width: 80vw;
+  display: inline-block;
   margin: 0 auto;
   text-align: center;
-  padding-top: 10px;
   padding-bottom: 20px;
+  border-radius: 50% 50% 0px 0px;
+  padding-right: 20px;
+  padding-left: 5px;
+}
+
+#plane-center {
+  display: flex;
+  justify-content: center;
+}
+
+h2.spacer {
+  padding-top: 300px;
 }
 
 .col-header {
-  display: inline-block;
+  display: flex;
   margin: 9px;
+  padding-left: 6px;
   width: 45px;
   height: 15px;
-  border-radius: 6px 6px;
   text-align: center;
   overflow: hidden;
 }
 
+div.form-group.extend {
+  max-width: 325px;;
+}
 table {
   background-color: rgba(255,255,255,0.8);
 }
@@ -110,4 +126,8 @@ table {
 
 #flightForm {
   margin-bottom: 20px;
+}
+
+button#confirm-seat {
+  margin-top: 30px;
 }

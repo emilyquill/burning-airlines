@@ -12,23 +12,23 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group extend">
     <%= f.label :origin %><br>
     <%= f.text_field :origin, :class => 'form-control' %>
   </div>
-  <div class="form-group">
+  <div class="form-group extend">
     <%= f.label :destination %><br>
     <%= f.text_field :destination, :class => 'form-control' %>
   </div>
-  <div class="form-group">
+  <div class="form-group extend">
     <%= f.label :date %><br>
     <%= f.datetime_select :date, :class => 'form-control' %>
   </div>
-  <div class="form-group">
+  <div class="form-group extend">
     <%= f.label :plane_id %><br>
-    <%= f.collection_select(:plane_id, Plane.all, :id, :name, {:prompt => 'Select a plane'} )  %>
+    <%= f.collection_select(:plane_id, Plane.all, :id, :name, {:prompt => 'Select a plane'}, :class => 'form-control' )  %>
   </div>
-  <div class="form-group">
+  <div class="form-group extend">
     <%= f.submit :class => 'btn btn-success', :method => 'get'  %>
   </div>
 <% end %>

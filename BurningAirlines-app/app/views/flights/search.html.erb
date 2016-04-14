@@ -37,7 +37,7 @@
 <!-- Flight row view -->
 <script id="flightRowTemplate" type="text/template">
   <tr id="tableRow" data-id="<%%= id %>">
-    <td> <%%= id %></td>
+    <td>BA <%%= id %></td>
     <td> <%%= origin %></td>
     <td> <%%= destination %></td>
     <td> <%%= date %></td>
@@ -62,6 +62,7 @@
 <!-- Flight Search Template -->
 <script id="flightViewTemplate" type="text/template">
   <div id="viewFlightContainer">
+    <h2>Flight Details</h2>
   <table id="viewFlight" class="table table-condensed table-bordered">
     <thead>
       <tr>
@@ -75,7 +76,7 @@
     </thead>
     <tbody>
       <tr>
-      <td> <%%= id %></td>
+      <td>BA <%%= id %></td>
       <td> <%%= origin %></td>
       <td> <%%= destination %></td>
       <td> <%%= date %>    </td>
@@ -83,5 +84,6 @@
     </tr>
     </tbody>
   </table>
+  <h2>Choose your seat</h2>
   </div>
 </script>

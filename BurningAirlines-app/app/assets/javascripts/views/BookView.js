@@ -31,15 +31,24 @@ app.BookView = Backbone.View.extend({
     var flightID = this.model.get('id');
     var seatRow = $('.clicked').data('row');
     var seatCol = $('.clicked').data('col');
-    alert("CONFIRMED! You're sitting in row " +seatRow+" on flight "+flightID);
+    var columnLetter = String.fromCharCode(64 + seatCol);
 
-    reservation.set({
-      user_id: userID,
-      flight_id: flightID,
-      column: seatCol,
-      row: seatRow
-    });
-    reservation.save();
+    if (seatRow === undefined) {
+      alert("Please choose an available seat and then click confirm.");
+    } else {
+      alert("CONFIRMED! You're sitting in seat " +seatRow+columnLetter+" on flight "+flightID);
+      reservation.set({
+        user_id: userID,
+        flight_id: flightID,
+        column: seatCol,
+        row: seatRow
+      });
+      reservation.save();
+      $('.col').removeClass('clicked');
+
+    }
+
+
 
 
     // TODO: If we wanted to send to a 'confirmation' page..
@@ -50,14 +59,14 @@ app.BookView = Backbone.View.extend({
     var flightNumber = this.model.get('id');
     var origin = this.model.get('origin');
     var destination = this.model.get('destination');
-    var date = moment(this.model.get('date')).format('MMMM Do YYYY, h:mm a');
+    var date = moment(this.model.get('date')).format('MMMM D, h:mm a');
     var plane = this.model.get('plane_id');
 
     var flightViewTemplate = $('#flightViewTemplate').html();
     var flightViewHTML = _.template( flightViewTemplate );
 
     var flightAttr = this.model.attributes;
-    flightAttr.date = moment(flightAttr.date).format('MMMM Do YYYY, h:mm a');
+    flightAttr.date = moment(flightAttr.date).format('MMMM D, h:mm a');
     this.$el.html( flightViewHTML(flightAttr ) );
 
 
@@ -68,13 +77,13 @@ app.BookView = Backbone.View.extend({
       });
       var planeColumns = matchingPlane[0].attributes.columns;
       var planeRows = matchingPlane[0].attributes.rows;
-      $('#main').append('<div id="plane"></div>');
+      $('#main').append('<div id="plane-center"><div id="plane"></div></div>');
       renderPlane(planeRows,planeColumns);
-      $('#main').append('<div id="confirm-seat-container"><button id="confirm-seat" class="btn btn-success"> Confirm Seat </button></div>');
+      $('#plane').append('<div id="confirm-seat-container"><button id="confirm-seat" class="btn btn-success"> Confirm Seat </button></div>');
 
       window.setInterval(function(){
         app.reservations.fetch();
-      }, 500);
+      }, 200);
 
     });
 

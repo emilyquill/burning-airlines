@@ -6,14 +6,21 @@ app.FlightResultView = Backbone.View.extend({
     'click #book-flight': 'bookFlight'
   },
   render: function() {
+    if (this.collection.length > 0) {
+      _.each(this.collection, function (flight) {
 
-    _.each(this.collection, function (flight) {
-        var flightObject = flight.attributes;
-        flight.attributes.date = moment(flight.attributes.date).format('MMMM Do YYYY, h:mm a');
-        var flightRowTemplate = $('#flightRowTemplate').html();
-        var flightViewHTML = _.template( flightRowTemplate );
-        $('#flight-results').append( flightViewHTML( flightObject ) );
-    });
+          var flightObject = flight.attributes;
+          flight.attributes.date = moment(flight.attributes.date).format('MMMM D, h:mm a');
+          var flightRowTemplate = $('#flightRowTemplate').html();
+          var flightViewHTML = _.template( flightRowTemplate );
+          $('#flight-results').append( flightViewHTML( flightObject ) );
+      });
+    } else {
+      $('#flight-results').append('<td colspan="6">No flights found.</td>' );
+
+    }
+
+
   },
   showFlight: function(e) {
     var flightId = e.currentTarget.dataset.id;
