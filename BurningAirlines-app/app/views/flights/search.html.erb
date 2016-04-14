@@ -21,7 +21,6 @@
         <th>Destination</th>
         <th>Date</th>
         <th>Plane</th>
-        <th>Availability / Capacity </th>
         <th>Book </th>
       </tr>
     </thead>
@@ -43,8 +42,7 @@
     <td> <%%= destination %></td>
     <td> <%%= date %></td>
     <td> <%%= plane_id %></td>
-    <td></td>
-    <td> <button id="book-flight" data-id="<%%= id  %>"> Book Flight</button></td>
+    <td> <button class="btn btn-success" id="book-flight" data-id="<%%= id  %>"> Book Flight</button></td>
   </tr>
 </script>
 
@@ -52,21 +50,13 @@
 
 <!-- Flight Search Template -->
 <script id="flightSearchViewTemplate" type="text/template">
-<<<<<<< HEAD
-  <div class="login_form">
     <div class="form-group">
       <label for="input">From:</label><input class="form-control" id="origin" placeholder="San Francisco">
     </div>
     <div class="form-group">
       <label for="input">To:</label><input class="form-control" id="destination" placeholder="New York">
     </div>
-    <button class="btn btn-success">Search</button>
-  </div>
-=======
-  <label for="input">From:</label><input id="origin" placeholder="San Francisco">
-  <label for="input">To:</label><input id="destination" placeholder="New York">
-  <button class="btn btn-primary">Search</button>
->>>>>>> 2fb08fd57bb8485cfd38849d690a3e7f3471d6ec
+    <button class="btn btn-primary">Search</button>
 </script>
 
 <!-- Flight Search Template -->
@@ -80,7 +70,6 @@
         <th>Destination</th>
         <th>Date</th>
         <th>Plane</th>
-        <th>Availability / Capacity </th>
       </tr>
 
     </thead>
@@ -91,8 +80,6 @@
       <td> <%%= destination %></td>
       <td> <%%= date %>    </td>
       <td> <%%= plane_id %></td>
-      <td> </td>
-
     </tr>
     </tbody>
   </table>
