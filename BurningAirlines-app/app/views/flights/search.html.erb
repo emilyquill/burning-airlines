@@ -1,5 +1,4 @@
 <!-- This is only for Backbone -->
-<div class="container">
 <div id="main"></div>  <!-- Foundation for our AppView.js -->
 
 <!-- Passing user's name to Backbone -->
@@ -8,9 +7,12 @@
 
 <!-- Main View Template -->
 <script id="appViewTemplate" type="text/template">
+  <div class="container">
   <h1 >Search Flights</h1>
   <div id="flightForm">Flight form goes here</div>
-  <table id="results" class="table table-inverse">
+
+<div class="table-responsive">
+  <table id="results" class="hidden table table-inverse">
     <thead>
       <tr>
         <th>Flight Number</th>
@@ -27,6 +29,8 @@
 
 
   </table>
+  </div>
+  </div>
 </script>
 
 
@@ -47,9 +51,15 @@
 
 <!-- Flight Search Template -->
 <script id="flightSearchViewTemplate" type="text/template">
-  <label for="input">From:</label><input id="origin" placeholder="San Francisco">
-  <label for="input">To:</label><input id="destination" placeholder="New York">
-  <button>Search</button>
+  <div class="login_form">
+    <div class="form-group">
+      <label for="input">From:</label><input class="form-control" id="origin" placeholder="San Francisco">
+    </div>
+    <div class="form-group">
+      <label for="input">To:</label><input class="form-control" id="destination" placeholder="New York">
+    </div>
+    <button class="btn btn-success">Search</button>
+  </div>
 </script>
 
 <!-- Flight Search Template -->
@@ -79,4 +89,3 @@
     </tbody>
   </table>
 </script>
-</div>

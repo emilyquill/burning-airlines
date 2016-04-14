@@ -31,7 +31,8 @@
   width: 45px;
   height: 50px;
   overflow: hidden;
-  padding-top: 8px;
+  padding-top: 15px;
+  text-align: right;
 }
 
 .row {
@@ -42,7 +43,7 @@
 
 #plane {
   background-color: rgba(255,255,255,0.7);
-  width: 100vw;
+  width: 80vw;
   margin: 0 auto;
   text-align: center;
   padding-top: 10px;
@@ -80,4 +81,8 @@ table {
   padding-left: 10px;
   padding-top: 15px;
 
+}
+
+#flightForm {
+  margin: 20px;
 }
