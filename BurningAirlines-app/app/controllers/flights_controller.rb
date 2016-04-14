@@ -2,6 +2,7 @@ class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
   def search
+    @current_user
   end
 
   # GET /flights

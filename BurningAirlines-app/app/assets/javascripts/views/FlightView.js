@@ -2,7 +2,14 @@ var app = app || {};
 
 app.FlightView = Backbone.View.extend({
   el: '#main',
+  events: {
+    'click button':'bookFlight'
+  },
+  bookFlight: function(){
+    var flightId = this.model.get('id');
+    app.router.navigate('flight/' + flightId + '/book', true);
 
+  },
   render: function(){
     var flightNumber = this.model.get('id');
     var origin = this.model.get('origin');
@@ -13,19 +20,14 @@ app.FlightView = Backbone.View.extend({
     var flightViewTemplate = $('#flightViewTemplate').html();
     var flightViewHTML = _.template( flightViewTemplate );
     this.$el.html( flightViewHTML(this.model.toJSON() ) );
+    this.$el.append('<button id="book-flight"> Book Flight </button>');
 
     app.planes = new app.Planes();
     app.planes.fetch().done(function() {
       var matchingPlane = app.planes.where({
         id: plane
       });
-      var planeColumns = matchingPlane[0].attributes.columns;
-      var planeRows = matchingPlane[0].attributes.rows;
-      $('#main').append('<div id="plane"></div>');
-      renderPlane(planeRows,planeColumns);
-
+      var capacity = matchingPlane[0].attributes.columns * matchingPlane[0].attributes.rows;
     });
-
-
   }
 });

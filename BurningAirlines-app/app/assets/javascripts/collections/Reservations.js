@@ -5,8 +5,10 @@ app.Reservations = Backbone.Collection.extend({
   model: app.Reservation,
   initialize: function() {
     this.on("add", function( reservation ){
-      console.log( reservation );
-      // TODO: repaint the flight view when a reservation is added
+
+      // IF we are currently showing that flight which a reservation has been added to
+
+      app.bookView.render();
     });
   }
 });
