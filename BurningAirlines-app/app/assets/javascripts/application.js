@@ -13,8 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+
 //= require moment
 //= require bootstrap-datetimepicker
+
+//= require moment.js
+
 //= require backbone
 //= require_tree ./models
 //= require_tree ./collections
