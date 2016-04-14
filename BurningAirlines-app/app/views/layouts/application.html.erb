@@ -21,13 +21,19 @@
       </button>
       <a class="navbar-brand" href="/"><i class="fa fa-paper-plane" aria-hidden="true"></i> Burning Airlines</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<%= new_user_path %>"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
-        <li><a href="<%= login_path %>"><i class="fa fa-user" aria-hidden="true"></i></i> Login</a></li>
-        <li><a href="<%= root_path %>"><i class="fa fa-user" aria-hidden="true"></i></i>Logout</a></li>
+
+
+        <% if !@current_user.present? %>
+          <li><a href="<%= login_path %>"><i class="fa fa-user" aria-hidden="true"></i></i> Login</a></li>
+          <li><a href="<%= new_user_path %>"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
+        <% else %>
+          <li>You are logged in as <%= @current_user.name %></li>
+          <li><a href="<%= logout_path %>"><i class="fa fa-user" aria-hidden="true"></i></i>Logout</a></li>
+
+        <% end %>
       <ul>
 
     </div><!-- /.navbar-collapse -->
