@@ -6,11 +6,11 @@ app.Reservations = Backbone.Collection.extend({
   initialize: function() {
     this.on("add", function( reservation ){
       if ( reservation.get("flight_id") === app.flight_id ) {
-
         var col = reservation.attributes.column;
         var row = reservation.attributes.row;
+        var userName = reservation.attributes.user.name;
 
-        var $seat = $('[data-col="'+col+'"][data-row="'+row+'"]');
+        var $seat = $('[data-col="'+col+'"][data-row="'+row+'"]').text(userName);
         $seat.addClass('taken');
 
       }

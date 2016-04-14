@@ -9,6 +9,7 @@ app.FlightResultView = Backbone.View.extend({
 
     _.each(this.collection, function (flight) {
         var flightObject = flight.attributes;
+        flight.attributes.date = moment(flight.attributes.date).format('MMMM Do YYYY, h:mm a');
         var flightRowTemplate = $('#flightRowTemplate').html();
         var flightViewHTML = _.template( flightRowTemplate );
         $('#flight-results').append( flightViewHTML( flightObject ) );

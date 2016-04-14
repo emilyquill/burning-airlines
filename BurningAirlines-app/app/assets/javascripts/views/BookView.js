@@ -31,6 +31,7 @@ app.BookView = Backbone.View.extend({
     var flightID = this.model.get('id');
     var seatRow = $('.clicked').data('row');
     var seatCol = $('.clicked').data('col');
+    alert("CONFIRMED! You're sitting in row " +seatRow+" on flight "+flightID);
 
     reservation.set({
       user_id: userID,
@@ -49,12 +50,16 @@ app.BookView = Backbone.View.extend({
     var flightNumber = this.model.get('id');
     var origin = this.model.get('origin');
     var destination = this.model.get('destination');
-    var date = this.model.get('date');
+    var date = moment(this.model.get('date')).format('MMMM Do YYYY, h:mm a');
     var plane = this.model.get('plane_id');
 
     var flightViewTemplate = $('#flightViewTemplate').html();
     var flightViewHTML = _.template( flightViewTemplate );
-    this.$el.html( flightViewHTML(this.model.toJSON() ) );
+
+    var flightAttr = this.model.attributes;
+    flightAttr.date = moment(flightAttr.date).format('MMMM Do YYYY, h:mm a');
+    this.$el.html( flightViewHTML(flightAttr ) );
+
 
     app.planes = new app.Planes();
     app.planes.fetch().done(function() {
@@ -69,7 +74,7 @@ app.BookView = Backbone.View.extend({
 
       window.setInterval(function(){
         app.reservations.fetch();
-      }, 2000);
+      }, 500);
 
     });
 
