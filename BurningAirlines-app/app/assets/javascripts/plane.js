@@ -46,11 +46,3 @@ var renderPlane = function(rows,cols) {
   $mapHeader.prepend('<div class="col-header"></div>');
   $plane.prepend('<h2>Seat Map:</h2>');
 };
-
-$(document).ready(function() {
-  var rows = $('.plane-details').data('rows');
-  var cols = $('.plane-details').data('columns');
-
-  renderPlane(rows,cols);
-
-});

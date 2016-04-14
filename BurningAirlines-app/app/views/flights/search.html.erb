@@ -2,12 +2,15 @@
 <div class="container">
 <div id="main"></div>  <!-- Foundation for our AppView.js -->
 
+<!-- Passing user's name to Backbone -->
+<input type="hidden" class="user-details" data-name="<%= @current_user.name %>" data-id="<%= @current_user.id %>">
+
 
 <!-- Main View Template -->
 <script id="appViewTemplate" type="text/template">
   <h1>Search Flights</h1>
   <div id="flightForm">Flight form goes here</div>
-  <table id="results" class="table table-condensed table-bordered">
+  <table id="results" class="hidden table table-condensed table-bordered">
     <thead>
       <tr>
         <th>Flight Number</th>
@@ -16,12 +19,31 @@
         <th>Date</th>
         <th>Plane</th>
         <th>Availability / Capacity </th>
+        <th>Book </th>
       </tr>
     </thead>
+    <tbody id="flight-results">
+    </tbody>
+
 
   </table>
-
 </script>
+
+
+<!-- Flight row view -->
+<script id="flightRowTemplate" type="text/template">
+  <tr id="tableRow" data-id="<%%= id %>">
+    <td> <%%= id %></td>
+    <td> <%%= origin %></td>
+    <td> <%%= destination %></td>
+    <td> <%%= date %></td>
+    <td> <%%= plane_id %></td>
+    <td></td>
+    <td> <button id="book-flight" data-id="<%%= id  %>"> Book Flight</button></td>
+  </tr>
+</script>
+
+
 
 <!-- Flight Search Template -->
 <script id="flightSearchViewTemplate" type="text/template">
