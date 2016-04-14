@@ -21,9 +21,9 @@
   </tbody>
 </table>
 
-<%= button_to 'Edit', edit_plane_path(@plane), :class => 'btn btn-success' %>
+<%= button_to 'Edit', edit_plane_path(@plane), :class => 'btn btn-success', :method => 'get' %>
 <br>
-<%= button_to 'Back', planes_path, :class => 'btn btn-primary' %>
+<%= button_to 'Back', planes_path, :class => 'btn btn-primary', :method => 'get' %>
 
 
 </div>
