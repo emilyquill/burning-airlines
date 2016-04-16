@@ -27,8 +27,8 @@ app.FlightResultView = Backbone.View.extend({
     app.router.navigate('flight/' + flightId, true);
 
   },
-  bookFlight: function(){
-    var flightId = $('#book-flight').data('id');
+  bookFlight: function(e){
+    var flightId = e.currentTarget.dataset.id;
     app.router.navigate('flight/' + flightId + '/book', true);
 
   }

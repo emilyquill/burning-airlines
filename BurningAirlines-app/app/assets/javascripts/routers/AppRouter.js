@@ -3,7 +3,6 @@ var app = app || {};
 app.AppRouter = Backbone.Router.extend({
   routes: {
     '' : 'index',
-    'flight/:id' : 'viewFlight',
     'flight/:id/book':'bookFlight',
     ':origin/:destination' : 'findFlight'
   },
@@ -12,23 +11,11 @@ app.AppRouter = Backbone.Router.extend({
     app.appView = new app.AppView();
     app.appView.render();
   },
-  viewFlight: function(id) {
-    var flight = new app.Flight({id:id});
-    flight.fetch().done(function(){
-      var flightView = new app.FlightView({
-        model:flight
-      });
-      flightView.render();
-    });
-  },
   bookFlight: function(id) {
 
-    console.log('book flight function reached!');
     app.flight_id = parseInt( id );
     var flight = new app.Flight({id:id});
     flight.fetch().done(function(){
-
-
       app.bookView = new app.BookView({
         model:flight
       });
